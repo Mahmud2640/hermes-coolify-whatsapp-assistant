@@ -2,7 +2,15 @@
 
 A read-only AI operations assistant that delivers Coolify events to WhatsApp and answers natural-language questions about server, application, and deployment status.
 
-> **Project status:** documentation and reusable templates are ready. Add your sanitized n8n export and demo screenshots before publishing.
+> **Project status:** the core monitoring, interactive query, and notification flows were validated in a real deployment. One additional WhatsApp sender/LID refresh remains a documented verification item. Add your sanitized n8n export and redacted demo screenshots before publishing.
+
+## Real-world case study
+
+This repository documents an actual VPS automation journey rather than an idealized installation. It covers the original goal, architecture decisions, failed attempts, root causes, fixes, verification evidence, and final outcome.
+
+- Read the complete [real-world case study](docs/case-study.md).
+- Use the [operations guide](docs/operations-guide.md) after installation.
+- Consult [troubleshooting](docs/troubleshooting.md) when a component behaves differently from the expected flow.
 
 ## What it solves
 
@@ -62,8 +70,10 @@ flowchart LR
 |   `-- SOUL.example.md
 |-- docs/
 |   |-- architecture.md
+|   |-- case-study.md
 |   |-- installation.md
 |   |-- n8n-workflow.md
+|   |-- operations-guide.md
 |   |-- security.md
 |   `-- troubleshooting.md
 |-- n8n/
@@ -77,11 +87,13 @@ flowchart LR
 
 ## Quick start
 
-1. Read [the architecture](docs/architecture.md).
-2. Follow [the installation guide](docs/installation.md).
-3. Configure the [n8n notification flow](docs/n8n-workflow.md).
-4. Review the [security checklist](docs/security.md).
-5. Use [troubleshooting](docs/troubleshooting.md) if WhatsApp rejects an authorized user.
+1. Start with the [real-world case study](docs/case-study.md) to understand why each component exists.
+2. Read [the architecture](docs/architecture.md).
+3. Follow [the installation guide](docs/installation.md).
+4. Configure the [n8n notification flow](docs/n8n-workflow.md).
+5. Validate and operate the system with the [operations guide](docs/operations-guide.md).
+6. Review the [security checklist](docs/security.md).
+7. Use [troubleshooting](docs/troubleshooting.md) if WhatsApp rejects an authorized user.
 
 Copy the templates rather than editing them with real credentials committed to Git:
 
