@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Hermes Coolify WhatsApp Assistant architecture</title>
+  <desc id="desc">Automatic Coolify event notifications and interactive read-only infrastructure monitoring through WhatsApp.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.52" stop-color="#0b1930"/>
+      <stop offset="1" stop-color="#10243d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#23d5ab"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000814" flood-opacity="0.38"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#67e8f9"/>
+    </marker>
+    <style>
+      .title{font:700 36px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc}.subtitle{font:400 17px Inter,Segoe UI,Arial,sans-serif;fill:#a8bdd4}.lane{font:700 15px Inter,Segoe UI,Arial,sans-serif;letter-spacing:1.8px;fill:#67e8f9}.node-title{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#f8fafc}.node-sub{font:400 13px Inter,Segoe UI,Arial,sans-serif;fill:#a8bdd4}.chip{font:600 12px Inter,Segoe UI,Arial,sans-serif;fill:#dff9ff}.arrow-label{font:600 12px Inter,Segoe UI,Arial,sans-serif;fill:#9fdcec}.node{fill:#10243d;stroke:#294969;stroke-width:1.5}.node-accent{fill:#0c2f35;stroke:#1cc8a0;stroke-width:1.5}.line{fill:none;stroke:#67e8f9;stroke-width:2.5;marker-end:url(#arrow)}.line-return{fill:none;stroke:#23d5ab;stroke-width:2.5;stroke-dasharray:7 6;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="1080" cy="80" r="190" fill="#1d4ed8" opacity=".10"/>
+  <circle cx="70" cy="640" r="220" fill="#10b981" opacity=".08"/>
+  <rect x="58" y="42" width="8" height="73" rx="4" fill="url(#accent)"/>
+  <text x="88" y="72" class="title">AI-Powered VPS Monitoring</text>
+  <text x="88" y="104" class="subtitle">Coolify + n8n + Hermes Agent + WhatsApp</text>
+  <text x="62" y="165" class="lane">AUTOMATIC EVENT NOTIFICATIONS</text>
+  <g filter="url(#shadow)"><rect class="node" x="62" y="190" width="210" height="105" rx="16"/><circle cx="97" cy="225" r="16" fill="#f97316"/><text x="124" y="231" class="node-title">Coolify</text><text x="84" y="263" class="node-sub">Deployment &amp; server events</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="342" y="190" width="210" height="105" rx="16"/><circle cx="377" cy="225" r="16" fill="#ef4444"/><text x="404" y="231" class="node-title">n8n</text><text x="364" y="257" class="node-sub">Normalize payload</text><text x="364" y="277" class="node-sub">Generate HMAC-SHA256</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="622" y="190" width="230" height="105" rx="16"/><circle cx="657" cy="225" r="16" fill="#8b5cf6"/><text x="684" y="231" class="node-title">Hermes Webhook</text><text x="644" y="263" class="node-sub">Verify signature &amp; deliver</text></g>
+  <g filter="url(#shadow)"><rect class="node-accent" x="922" y="190" width="216" height="105" rx="16"/><circle cx="957" cy="225" r="16" fill="#22c55e"/><text x="984" y="231" class="node-title">WhatsApp Group</text><text x="944" y="263" class="node-sub">Operations notifications</text></g>
+  <path class="line" d="M272 242H336"/><path class="line" d="M552 242H616"/><path class="line" d="M852 242H916"/>
+  <text x="285" y="229" class="arrow-label">event</text><text x="566" y="229" class="arrow-label">signed</text><text x="866" y="229" class="arrow-label">deliver</text>
+  <line x1="62" y1="345" x2="1138" y2="345" stroke="#294969"/>
+  <text x="62" y="386" class="lane">INTERACTIVE READ-ONLY MONITORING</text>
+  <g filter="url(#shadow)"><rect class="node-accent" x="62" y="412" width="220" height="105" rx="16"/><circle cx="97" cy="447" r="16" fill="#22c55e"/><text x="124" y="453" class="node-title">Operator</text><text x="84" y="485" class="node-sub">Native mention + question</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="342" y="412" width="220" height="105" rx="16"/><circle cx="377" cy="447" r="16" fill="#8b5cf6"/><text x="404" y="453" class="node-title">Hermes Agent</text><text x="364" y="485" class="node-sub">Reasoning &amp; language response</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="622" y="412" width="230" height="105" rx="16"/><circle cx="657" cy="447" r="16" fill="#38bdf8"/><text x="684" y="453" class="node-title">Monitor Skill</text><text x="644" y="485" class="node-sub">Fixed GET-only helper</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="922" y="412" width="216" height="105" rx="16"/><circle cx="957" cy="447" r="16" fill="#f97316"/><text x="984" y="453" class="node-title">Coolify API</text><text x="944" y="485" class="node-sub">Live infrastructure status</text></g>
+  <path class="line" d="M282 464H336"/><path class="line" d="M562 464H616"/><path class="line" d="M852 464H916"/>
+  <path class="line-return" d="M1028 523C1028 570 452 570 452 523"/><path class="line-return" d="M342 500C300 500 300 550 172 550C110 550 98 527 98 519"/>
+  <text x="291" y="451" class="arrow-label">ask</text><text x="576" y="451" class="arrow-label">invoke</text><text x="866" y="451" class="arrow-label">GET</text><text x="705" y="590" class="arrow-label">sanitized status response</text>
+  <rect x="62" y="617" width="136" height="32" rx="16" fill="#123640"/><text x="84" y="638" class="chip">READ-ONLY API</text>
+  <rect x="212" y="617" width="160" height="32" rx="16" fill="#1d3152"/><text x="234" y="638" class="chip">HMAC-SECURED</text>
+  <rect x="386" y="617" width="164" height="32" rx="16" fill="#263052"/><text x="408" y="638" class="chip">MULTILINGUAL</text>
+  <rect x="564" y="617" width="190" height="32" rx="16" fill="#153b32"/><text x="586" y="638" class="chip">AUTHORIZED USERS</text>
+  <text x="1138" y="638" text-anchor="end" class="subtitle">Real-world DevOps automation case study</text>
+</svg>

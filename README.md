@@ -1,8 +1,28 @@
 # Hermes + Coolify WhatsApp Assistant
 
-A read-only AI operations assistant that delivers Coolify events to WhatsApp and answers natural-language questions about server, application, and deployment status.
+**A secure, read-only AI operations assistant that delivers Coolify events to WhatsApp and answers natural-language questions about server, application, and deployment status.**
 
-> **Project status:** the core monitoring, interactive query, and notification flows were validated in a real deployment. One additional WhatsApp sender/LID refresh remains a documented verification item. Add your sanitized n8n export and redacted demo screenshots before publishing.
+![Hermes, Coolify, n8n and WhatsApp monitoring architecture](assets/hermes-coolify-architecture.png)
+
+<p align="center">
+  <a href="docs/case-study.md">Case Study</a> ·
+  <a href="docs/architecture.md">Architecture</a> ·
+  <a href="docs/installation.md">Installation</a> ·
+  <a href="docs/operations-guide.md">Operations</a> ·
+  <a href="docs/troubleshooting.md">Troubleshooting</a> ·
+  <a href="docs/security.md">Security</a>
+</p>
+
+> **Project status:** the core monitoring, interactive query, and notification flows were validated in a real deployment. One additional WhatsApp sender/LID refresh remains a documented verification item.
+
+## Project showcase
+
+This project was shared publicly as a practical DevOps and AI automation case study:
+
+- [LinkedIn project post](https://www.linkedin.com/posts/mahmud2640_devops-automation-aiagents-share-7517448961419448320-kYyS/)
+- [Facebook project post](https://www.facebook.com/photo/?fbid=2232361427339925&set=a.958763984699682)
+
+The social posts provide a short overview. This repository contains the complete architecture, implementation process, security decisions, encountered problems, root causes, solutions, and operational runbooks.
 
 ## Real-world case study
 
@@ -19,21 +39,7 @@ Small teams often discover deployment failures only after a user reports them. T
 1. **Push notifications** — Coolify events travel through n8n to a signed Hermes webhook and are delivered to a WhatsApp group.
 2. **On-demand checks** — an authorized WhatsApp user asks a question, Hermes invokes a read-only skill, queries the Coolify API, and replies in the same conversation.
 
-```mermaid
-flowchart LR
-    subgraph Push notifications
-        C[Coolify event] --> N[n8n]
-        N -->|HMAC-signed POST| H[Hermes webhook]
-        H --> W[WhatsApp group]
-    end
-
-    subgraph Interactive monitoring
-        U[Authorized WhatsApp user] --> G[Hermes gateway]
-        G --> S[Coolify monitor skill]
-        S -->|GET only| A[Coolify API]
-        A --> S --> G --> U
-    end
-```
+See the [architecture guide](docs/architecture.md) for sequence diagrams, trust boundaries, and design decisions.
 
 ## Features
 
@@ -46,6 +52,18 @@ flowchart LR
 - Read-only Coolify API client
 - Sanitized Docker Compose and environment templates
 - Troubleshooting guidance for WhatsApp LIDs and stale bridges
+
+## Validated outcomes
+
+| Workflow | Result |
+|---|---|
+| Dedicated WhatsApp bot connection | Working |
+| Mention-based WhatsApp group conversation | Working |
+| Read-only Coolify API monitoring | Working |
+| Natural-language infrastructure queries | Working |
+| HTTPS Hermes webhook | Working |
+| Coolify → n8n → Hermes → WhatsApp test notification | Working |
+| Additional WhatsApp sender/LID | Configuration added; fresh bridge verification documented |
 
 ## Technology
 
@@ -68,6 +86,9 @@ flowchart LR
 |-- docker-compose.example.yml
 |-- config/
 |   `-- SOUL.example.md
+|-- assets/
+|   |-- hermes-coolify-architecture.png
+|   `-- hermes-coolify-architecture.svg
 |-- docs/
 |   |-- architecture.md
 |   |-- case-study.md
@@ -137,7 +158,9 @@ Example WhatsApp questions:
 - [ ] Export a sanitized n8n workflow into `n8n/`
 - [ ] Run a secret scan before the first push
 - [ ] Add a short screen recording or GIF
-- [ ] Add the final GitHub URL to your LinkedIn case study
+- [x] Publish the project overview on LinkedIn
+- [x] Publish the project overview on Facebook
+- [x] Add the public social posts to this README
 
 ## Disclaimer
 
