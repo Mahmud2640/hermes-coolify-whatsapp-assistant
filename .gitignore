@@ -1,0 +1,42 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.token
+
+# Hermes and WhatsApp private state
+auth.json
+creds.json
+session/
+whatsapp/session/
+lid-mapping-*.json
+*.sqlite
+
+# Logs and generated data
+*.log
+logs/
+data/
+output/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node / n8n
+node_modules/
+.n8n/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Compose overrides containing private values
+docker-compose.yml
+compose.yml

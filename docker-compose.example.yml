@@ -1,0 +1,29 @@
+services:
+  hermes:
+    image: nousresearch/hermes-agent:latest
+    restart: unless-stopped
+    command:
+      - gateway
+      - run
+    environment:
+      WHATSAPP_ENABLED: "true"
+      WHATSAPP_MODE: bot
+      WHATSAPP_ALLOWED_USERS: "${WHATSAPP_ALLOWED_USERS}"
+      WHATSAPP_GROUP_POLICY: allowlist
+      WHATSAPP_REQUIRE_MENTION: "true"
+      WHATSAPP_HOME_CHANNEL_NAME: "${WHATSAPP_HOME_CHANNEL_NAME}"
+      WEBHOOK_ENABLED: "true"
+      WEBHOOK_PORT: "8644"
+      WEBHOOK_SECRET: "${WEBHOOK_SECRET}"
+      COOLIFY_BASE_URL: "${COOLIFY_BASE_URL}"
+      COOLIFY_API_TOKEN: "${COOLIFY_API_TOKEN}"
+      TZ: "${TZ:-UTC}"
+    volumes:
+      - hermes-data:/opt/data
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    expose:
+      - "8644"
+
+volumes:
+  hermes-data:
